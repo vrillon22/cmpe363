@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html>
+<style>
+table {width: 100%; height: 100%; margin: 0px; border: 0px;}
+.row1   {height: 100px;}
+.row2   {height: 600px;}
+.points {padding: 0;
+    border-style: solid; border-width: 2px;
+    background: linear-gradient(180deg, rgba(0,255,20,1) 0%, rgba(249,255,21,1) 50%, rgba(255,0,0,1) 100%);
+}
+.P1_p{background: white; width: 100%;height: {{points01}}%;
+}
+.P2_p{background: white; width: 100%;height: {{points01}}%; 
+
+}
+.Mic{display: block;margin-left: auto;margin-right: auto;width: 150px; height: 150px; background-color: white;border-radius: 50%;position:relative;top:-25px;}
+img {  display: block;margin-left: auto;margin-right: auto;position: relative; top: 25px;}
+
+.Pro_img_C_1{width: 350px;height: 350px;background-color: green;border-radius: 50%;}
+.Pro_img_C_2{width: 350px;height: 350px;background-color: red;border-radius: 50%;}
+</style>
+<body>
+<div>
+    <table>
+        <tr class="row1">
+            <th style="width: 300px;"></th>
+            <th style="width: 30px;"></th>
+            <th><h1 id="load" class="load" style="width:100%;text-align: center; font-size: 100px; margin: 0px;">{{points0}}</h1></th>
+            <th style="width: 30px;"></th>
+            <th style="width: 300px;"></th>
+        </tr>
+        <tr class="row2">
+            <td style="height: 100%;"></td>
+            <td class="points" style="margin-right: 5px;"><div class="P1_p"></div><div style="height:100%;"></div></td>
+            <td style="background-color: black; border-radius: 50px; color:green; text-align: center;"><h2 style="font-size: 72px; height: 30%;">{{DT0}}</h2><h1 style="font-size: 200px; margin: 3px;">{{LL0}}</h1 ></td>
+            <td class="points" style="margin-left: 5px;"><div class="P2_p"></div><div style="height:100%;"></div></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style="height: 20px;position: relative;">
+                <form action="/room" method="post" style="height: 20px;">
+                <input type="text" id="roomID" name="roomID" value="{{roomID0}}" style="display: none;">
+                <input type="text" id="LL" name="LL" value="{{LL0}}" style="display: none;">
+                <input type="text" id="W" name="W" value="..." style="float: left;position: relative; top: 40px;">
+                <div class="Mic" id="microphoneContainer"><img class="Mic_img" id="microphoneInput" src="https://media.discordapp.net/attachments/605529975281549334/1064120166608293928/mic.png" width="100px" height="100px">
+                </div>
+                <input type="submit" value="Submit" style="width: 20%; float: right;position: relative; top: -110px;">
+            </form>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<script src="{{url_for('static', filename='app.js')}}"></script>
+<script src="{{url_for('static', filename='recorder.js')}}"></script>
+</body>
+</html> 

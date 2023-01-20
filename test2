@@ -1,0 +1,21 @@
+import pyodbc
+import time
+import random
+server = 'tcp:cmpe363.database.windows.net'
+database = 'cmpe363'
+username = 'admin-room'
+password = 'Cmpe363.'   
+driver='{ODBC Driver 18 for SQL Server}'
+
+
+
+conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+password)
+
+cursor = conn.cursor()
+insert_query = '''INSERT INTO [dbo].[Room] (roomID, point, usedWords) VALUES (?, ?, ?);'''
+roomID1=int(time.time())
+points1=50
+used_words1=""
+values = (roomID1,points1,used_words1)
+cursor.execute(insert_query,values)
+conn.commit()
